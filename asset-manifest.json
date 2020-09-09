@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/homemonitor/static/css/main.4dfbe333.chunk.css",
+    "main.js": "/homemonitor/static/js/main.53e852da.chunk.js",
+    "main.js.map": "/homemonitor/static/js/main.53e852da.chunk.js.map",
+    "runtime-main.js": "/homemonitor/static/js/runtime-main.de16f811.js",
+    "runtime-main.js.map": "/homemonitor/static/js/runtime-main.de16f811.js.map",
+    "static/js/2.29c6f8a6.chunk.js": "/homemonitor/static/js/2.29c6f8a6.chunk.js",
+    "static/js/2.29c6f8a6.chunk.js.map": "/homemonitor/static/js/2.29c6f8a6.chunk.js.map",
+    "index.html": "/homemonitor/index.html",
+    "precache-manifest.8462d2c08c66fb2e0ffffbeb090be7b8.js": "/homemonitor/precache-manifest.8462d2c08c66fb2e0ffffbeb090be7b8.js",
+    "service-worker.js": "/homemonitor/service-worker.js",
+    "static/css/main.4dfbe333.chunk.css.map": "/homemonitor/static/css/main.4dfbe333.chunk.css.map",
+    "static/js/2.29c6f8a6.chunk.js.LICENSE.txt": "/homemonitor/static/js/2.29c6f8a6.chunk.js.LICENSE.txt",
+    "static/media/icon.png": "/homemonitor/static/media/icon.8b4fd5f1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.de16f811.js",
+    "static/js/2.29c6f8a6.chunk.js",
+    "static/css/main.4dfbe333.chunk.css",
+    "static/js/main.53e852da.chunk.js"
+  ]
+}
