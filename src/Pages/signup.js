@@ -41,12 +41,14 @@ const styles = {
 };
 
 
-class login extends Component{
+class signup extends Component{
     constructor(){
         super();
         this.state = {
             email:'',
             passsword:'',
+            confirmPassword: '',
+            handle: '',
             loading: false,
             errors: {}
         }
@@ -56,11 +58,13 @@ class login extends Component{
         this.setState({
             loading: true
         })
-        const userData = {
+        const newUserData = {
             email: this.state.email,
-            password: this.state.password
+            password: this.state.password,
+            confirmPassword: this.state.confirmPassword,
+            handle: this.state.handle
         }
-        axios.post('/login', userData)
+        axios.post('/signup', newUserData)
             .then(res =>{
                 console.log(res.data);
                 localStorage.setItem('FBIdToken', 'Bearer ${res.data.token}');
@@ -94,7 +98,7 @@ class login extends Component{
                     <Typography 
                         variant="h2" 
                         className={classes.pageTitle}>
-                        Login
+                        Sign Up
                     </Typography>
                     <form noValidate onSubmit={this.handleSubmit}>
                         <TextField 
@@ -119,6 +123,28 @@ class login extends Component{
                             value={this.state.password} 
                             onChange={this.handleChange} 
                             fullWidth/>
+                        <TextField 
+                            id="confirmPassword" 
+                            name="confirmPassword" 
+                            type="password" 
+                            label="Confirm Password" 
+                            className={classes.textField}
+                            helperText = {errors.confirmPassword}
+                            error = {errors.confirmPassword ? true : false}
+                            value={this.state.confirmPassword} 
+                            onChange={this.handleChange} 
+                            fullWidth/>
+                        <TextField 
+                            id="handle" 
+                            name="handle" 
+                            type="text" 
+                            label="Handle" 
+                            className={classes.textField}
+                            helperText = {errors.handle}
+                            error = {errors.handle ? true : false}
+                            value={this.state.handle} 
+                            onChange={this.handleChange} 
+                            fullWidth/>
                         {errors.general && (
                             <Typography variant = "body2"
                             className={classes.customError}>
@@ -132,7 +158,7 @@ class login extends Component{
                             className={classes.button}
                             disabled={loading}
                         >
-                            Submit
+                            Sign Up
                             {loading && (
                                 <CircularProgress
                                     className = {classes.progress}/>
@@ -140,7 +166,7 @@ class login extends Component{
                         </Button>
                         <br />
                         <small>
-                            Don't have an account? Sign up <Link to="/signup">here</Link>
+                            Already have an account? Login <Link to="/login">here</Link>
                         </small> 
                     </form>
                 </Grid>
@@ -150,8 +176,8 @@ class login extends Component{
     }
 }
 
-login.propTypes = {
+signup.propTypes = {
     classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(login);
+export default withStyles(styles)(signup);
