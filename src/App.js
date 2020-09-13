@@ -12,7 +12,8 @@ import Navbar from './Components/Navbar';
 import home from './Pages/home';
 import login from './Pages/login';
 import signup from './Pages/signup';
-import CreateSensor from './Components/sensors/CreateSensor';
+import AddSensor from './Components/sensors/AddSensor';
+import SensorData from './Components/sensors/SensorData';
 
 const theme = createMuiTheme({
   palette:{
@@ -53,9 +54,10 @@ function App() {
         <div className="container">
           <Switch>
             <Route exact path = "/" component={home}/>
+            <Route exact path='/sensor/:id' component={SensorData}/>
             <Route exact path = "/login" component={login}/>
             <Route exact path = "/signup" component={signup}/>
-            <Route exact path = "/create" component={CreateSensor}/>
+            <Route exact path = "/addsensor" component={AddSensor}/>
           </Switch>
         </div>
       </Router>

@@ -16,7 +16,7 @@ import { ReactReduxFirebaseProvider, getFirebase } from 'react-redux-firebase'
 import 'firebase/firestore';
 
 const rrfConfig = { 
-    userProfile: 'projects',
+    userProfile: 'sensors',
     useFirestoreForProfile: true
 }
 
