@@ -5,6 +5,7 @@ import {compose} from 'redux'
 import { firestoreConnect } from 'react-redux-firebase';
 
 
+
 //components
 import CreateSensor from '../Components/sensors/AddSensor'
 import SensorList from '../Components/sensors/SensorList'

@@ -14,6 +14,7 @@ class Navbar extends Component{
                     <Button color="inherit" component={Link} to= "/" >My Home</Button>
                     <Button color="inherit" component={Link} to= "/addsensor" >Add Sensor</Button>
                     <Button color="inherit" component={Link} to= "/signup" >Sign Up</Button>
+                    <Button color="inherit" component={Link} to= "/logout" >Logout</Button>
                 </Toolbar>
             </AppBar>
         )

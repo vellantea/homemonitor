@@ -4,16 +4,24 @@ import './App.css';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import jwtDecode from 'jwt-decode';
+import firebase from 'firebase';
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 //Components
 import Navbar from './Components/Navbar';
+import PrivateRoute from './util/PrivateRoute';
 
 // Pages
 import home from './Pages/home';
 import login from './Pages/login';
 import signup from './Pages/signup';
+import logout from './Pages/logout';
 import AddSensor from './Components/sensors/AddSensor';
 import SensorData from './Components/sensors/SensorData';
+import { render } from '@testing-library/react';
+
+import { AuthProvider } from "./Auth";
+
 
 const theme = createMuiTheme({
   palette:{
@@ -47,23 +55,38 @@ if(token){
 
 function App() {
   return (
+    <AuthProvider>
     <MuiThemeProvider theme={theme}>
       <div className="App">
       <Router>
         <Navbar/>
         <div className="container">
           <Switch>
-            <Route exact path = "/" component={home}/>
+            <PrivateRoute exact path = "/" component={home}/>
             <Route exact path='/sensor/:id' component={SensorData}/>
-            <Route exact path = "/login" component={login}/>
-            <Route exact path = "/signup" component={signup}/>
+            <Route exact path = "/login" 
+              component={login} 
+              authenticated={authenticated}
+            />
+            <Route exact path = "/signup"
+              component={signup}
+              authenticated={authenticated}
+            />
+            <Route exact path = "/logout"
+              component={logout}
+              authenticated={authenticated}
+            />
             <Route exact path = "/addsensor" component={AddSensor}/>
           </Switch>
         </div>
       </Router>
     </div>
     </MuiThemeProvider>
+    </AuthProvider>
   ); 
+  
 }
 
+
 export default App;
+
