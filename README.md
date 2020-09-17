@@ -1,5 +1,5 @@
 Hosting URL: https://home-monitor-f28b4.web.app
-
+// URL is not working yet; the app works on the local host url with npm start
 
 Vision:
 - Web application
@@ -14,3 +14,14 @@ Vision:
 - Simulates a sensor
 - SSO (Single Sign On)
 
+Accomplished:
+- Web application uses firebase for backend and react for front end.
+- User is able to navigate the app easily
+- User is able to add their own sensors
+- Login platform (not SSO)
+
+
+Improvements:
+- implement logout button (that works)
+- SSO
+- Multiple people accessing the app and having their own sensors associated with that user
