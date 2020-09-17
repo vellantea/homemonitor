@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {firestoreConnect} from 'react-redux-firebase'
 import {compose} from 'redux'
+import SensorApiData from '../SensorApiData'
 
 const SensorData = (props) => {
 	const {sensor} = props;
@@ -11,9 +12,7 @@ const SensorData = (props) => {
 
             <h2 className="sensor-name">{sensor.name}</h2>
 
-            	<p>Temperature: {sensor.temp}</p>
-            	<p>Humidity: {sensor.humidity}</p>
-
+            	<SensorApiData serial_num={sensor.number}/>
       	</div>
 
 	)} else{
